@@ -1,24 +1,31 @@
-- title: Start
+- title: HOME
   url: "/"
   side: left
 
-- title: Getting Started
+
+
+- title: Downloads
+  url: "/blog/"
+  side: left
+
+
+- title:  Acquisition System
   url: "/getting-started/"
   side: left
 
-- title: "Templates"
+- title: "Sensors & Usage"
   url: "/design/"
   side: left
   dropdown:
-  - title: "Grid & Colors"
+  - title: "Overview"
     url: "/design/grid/"
-  - title: "Typography"
+  - title: "IMU"
     url: "/design/typography/typography/"
-  - title: "Page/Post"
+  - title: "Lidar-Velodyne"
     url: "/design/page/"
-  - title: "Post-Left-Sidebar"
+  - title: "Lidar-Livox"
     url: "/design/post-left-sidebar/"
-  - title: "Post-Right-Sidebar"
+  - title: "mono-cameras"
     url: "/design/post-right-sidebar/"
   - title: "Page Full-Width"
     url: "/design/page-fullwidth/"
@@ -31,7 +38,7 @@
   - title: "Portfolio"
     url: "/design/portfolio/"
 
-- title: "Header Styles"
+- title: "Sensor Calibration"
   url: "/headers/"
   side: left
   dropdown:
@@ -59,17 +66,12 @@
   - title: "Roadmap"
     url: "/roadmap/"
 
-- title: Blog
-  url: "/blog/"
-  side: left
-  dropdown:
-  - title: "Blog Archive"
-    url: "/blog/archive/"
+
 
 - title: "Search"
   url: "/search/"
   side: right
 
-- title: "Contact"
+- title: "WZM"
   url: "/contact/"
   side: right
