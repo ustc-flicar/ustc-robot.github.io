@@ -20,7 +20,7 @@
   - title: "Overview"
     url: "/design/grid/"
   - title: "IMU"
-    url: "/design/typography/typography/"
+    url: "/getting-started/index/#imu"
   - title: "Lidar-Velodyne"
     url: "/design/page/"
   - title: "Lidar-Livox"
