@@ -20,7 +20,7 @@ widget2:
 widget3:
   title: "Sensors & Usage"
   url: '/design/index.html'
-  image: widget-github-303x182.jpg
+  image: sensors_page1.jpg
   text: '<em>Feeling Responsive</em> is free and licensed under a MIT License. Make it your own and start building. The code is well-documented and explains you how it works.'
 #
 # Use the call for action to show a button on the frontpage
@@ -42,17 +42,6 @@ permalink: /index.html
 homepage: true
 ---
 
-# Citation
-If you use some resource from this data suite, please cite it as
-
-```C
-@article{nguyen2021ntuviral,
-  title={NTU VIRAL: A Visual-Inertial-Ranging-Lidar dataset, from an aerial vehicle viewpoint},
-  author={Nguyen, Thien-Minh and Yuan, Shenghai and Cao, Muqing and Lyu, Yang and Nguyen, Thien Hoang and Xie, Lihua},
-  journal={Internationl Journal of Robotics Research (accepted, to appear)},
-  year={2021}
-}
-```
 
 
 

@@ -2,16 +2,21 @@
   url: "/"
   side: left
 
-
-
 - title: Downloads
-  url: "/blog/"
+  url: "/changelog/"
   side: left
 
 
 - title:  Acquisition System
   url: "/getting-started/"
   side: left
+  dropdown:
+  - title: "Bucket Truck"
+    url: "/design/grid/"
+  - title: "Multisensors Platform"
+    url: "/getting-started/index#imu"
+  - title: "Ground Truth"
+    url: "/design/page/"
 
 - title: "Sensors & Usage"
   url: "/design/"
@@ -20,7 +25,7 @@
   - title: "Overview"
     url: "/design/grid/"
   - title: "IMU"
-    url: "/getting-started/index/#imu"
+    url: "/getting-started/index#imu"
   - title: "Lidar-Velodyne"
     url: "/design/page/"
   - title: "Lidar-Livox"
@@ -61,8 +66,7 @@
   url: "/documentation/"
   side: left
   dropdown:
-  - title: "Changelog"
-    url: "/changelog/"
+
   - title: "Roadmap"
     url: "/roadmap/"
 

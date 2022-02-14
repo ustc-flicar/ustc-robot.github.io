@@ -5,9 +5,7 @@ header:
 permalink           : "/getting-started/"
 sort: 1
 ---
-# Sensors & Usage
-
-## Overview
+## Bucket Truck
 
 The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS topics are reported in [Tab. 1](#tab-sensor-and-topic).
 
