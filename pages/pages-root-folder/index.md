@@ -7,6 +7,13 @@
 layout: frontpage
 header:
   image_fullwidth: header_unsplash_12.jpg
+
+callforaction:
+  url: https://www.google.com/chrome/?brand=BNSD&gclid=EAIaIQobChMI9ejb1fP_9QIVo5vCCh1EWgwXEAAYASAAEgKeg_D_BwE&gclsrc=aw.ds
+  text: Google Chrome browser is recommended to open this website for faster response ›
+  style: alert
+permalink: /index.html
+
 widget1:
   title: "Downloads"
   url: '/blog/index.html'
@@ -32,15 +39,16 @@ widget3:
 # to use the main color or success, alert or secondary.
 # To change colors see sass/_01_settings_colors.scss
 #
-callforaction:
 
-permalink: /index.html
 #
 # This is a nasty hack to make the navigation highlight
 # this page as active in the topbar navigation
 #
 homepage: true
 ---
+
+# Welcome to the USTC FlyingCar Dataset!
+##### We take advantage of our autonomous driving platform Annieway to develop novel challenging real-world computer vision benchmarks. Our tasks of interest are: stereo, optical flow, visual odometry, 3D object detection and 3D tracking. For this purpose, we equipped a standard station wagon with two high-resolution color and grayscale video cameras. 
 
 
 

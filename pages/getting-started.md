@@ -1,17 +1,19 @@
 ---
 layout: page-fullwidth
+title: "Acquisition System"
 header:
    image_fullwidth  : "header_homepage_13.jpg"
 permalink           : "/getting-started/"
 sort: 1
 ---
+
 ## Bucket Truck
 
 The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS topics are reported in [Tab. 1](#tab-sensor-and-topic).
 
 <a name="fig-hardware"></a>
 <p align="center">
-    <img src="./images/hardware.jpg" alt="Hardware Setup" width="50%"/>
+    <img src="../images/hardware.jpg">
 </p>
 <p style="text-align: center;">Fig 1. The research UAV with its sensors and corresponding coordinate frames </p>
 
