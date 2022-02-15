@@ -13,7 +13,7 @@ The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS
 
 <a name="fig-hardware"></a>
 <p align="center">
-    <img src="../images/hardware.jpg">
+    <img src="../images/hardware.jpg" alt="Hardware Setup" width="70%"/>
 </p>
 <p style="text-align: center;">Fig 1. The research UAV with its sensors and corresponding coordinate frames </p>
 
