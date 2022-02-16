@@ -145,7 +145,7 @@ Internally, a filter fuses gyroscope, acceleration, and magnetic field measureme
 ## Cameras
 The two cameras are externally triggered to capture images at the same time. For images triggered at the same time, their time stamps are different by **at most 3 ms**. This satisfies the default hardcoded threshold in VINS-Fusion. See our tutorial on how to run VINS-Fusion with the dataset [here]().
 
-## Lidar
+## Velodyne
 
 The Lidar model used for this dataset is OS1-16 gen 1 from Ouster. Each message under the topic `/os1_cloud_node1/points` or `/os1_cloud_node2/points` corresponds to a full 360&deg; scan, which can be converted to a pointcloud of resolution 16x1014. Notice that besides the common x, y, z, intensity fields, each point in the pointcloud also contains time, reflectivity, ring, noise, range information of the laser firing.
 To fully access these information, add the following definition of the Ouster point type to your code:

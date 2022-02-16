@@ -6,14 +6,27 @@ header:
 permalink           : "/getting-started/"
 sort: 1
 ---
+## Overview
+
+The acquisition system is illustrated in [Fig. 1](#fig-acsystme_1). It consists with three parts: Bucket Truck, Multisensors Platform and Ground Truth System.The bucket truck uses a hydraulic arm to lift the multi-sensor data acquisition system into the air. Well-calibrated and well-synchronized sensors such as cameras, Lidars, and IMUs collect multimodal data of the environment and motion information of the end of hydraulic arm. The laser tracker on the ground tracks the target prism on the motion platform, which provides millimeter-accurate 3D motion trajectories to provide benchmarks for positioning tasks.
+<!-- 
+斗式卡车使用液压臂将多传感器数据采集系统提升到空中，标定和同步良好的相机、激光雷达和IMU等传感器收集运动信息及多模态环境数据，地面的激光追踪仪对运动平台的靶球进行跟踪，提供毫米精度的三维运动轨迹，为定位任务提供基准
+-->
+<a name="fig-acsystme_1"></a>
+<p align="center">
+    <img src="../images/acquisition_page1.jpg" alt="Hardware Setup" width="70%"/>
+</p>
+<p style="text-align: center;">Fig 1. "Giraffe" Acquisition System </p>
+
 
 ## Bucket Truck
 
+Our bucket Truck is <a href="../_layouts/xg_en_bucket_truck.html">XCMG-XGS5143JGKZ</a>
 The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS topics are reported in [Tab. 1](#tab-sensor-and-topic).
 
 <a name="fig-hardware"></a>
 <p align="center">
-    <img src="../images/hardware.jpg" alt="Hardware Setup" width="70%"/>
+    <img src="../images/hardware.jpg" alt="Hardware Setup" width="50%"/>
 </p>
 <p style="text-align: center;">Fig 1. The research UAV with its sensors and corresponding coordinate frames </p>
 
@@ -131,7 +144,7 @@ The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS
 </tbody>
 </table>
 
-## IMU
+## MultiSensors Platform
 
 The IMU being used here is a 9-DoF inertia sensor. The frame of reference attached to this sensor is considered the _body frame_ of the whole setup.
 
@@ -142,85 +155,5 @@ The IMU being used here is a 9-DoF inertia sensor. The frame of reference attach
 
 Internally, a filter fuses gyroscope, acceleration, and magnetic field measurements and outputs the orientation result on the `/imu/imu` topic. Though our dataset does not have orientation groundtruth, user can consider this orientation estimate as one.
 
-## Cameras
+## Ground Truth
 The two cameras are externally triggered to capture images at the same time. For images triggered at the same time, their time stamps are different by **at most 3 ms**. This satisfies the default hardcoded threshold in VINS-Fusion. See our tutorial on how to run VINS-Fusion with the dataset [here]().
-
-## Lidar
-
-The Lidar model used for this dataset is OS1-16 gen 1 from Ouster. Each message under the topic `/os1_cloud_node1/points` or `/os1_cloud_node2/points` corresponds to a full 360&deg; scan, which can be converted to a pointcloud of resolution 16x1014. Notice that besides the common x, y, z, intensity fields, each point in the pointcloud also contains time, reflectivity, ring, noise, range information of the laser firing.
-To fully access these information, add the following definition of the Ouster point type to your code:
-
-```cpp
-struct PointXYZIRT
-{
-    PCL_ADD_POINT4D;
-    float intensity;
-    uint32_t t;
-    uint16_t reflectivity;
-    uint8_t  ring;          // The channel index
-    uint16_t noise;
-    uint32_t range;         // The distance measurement
-    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
-} EIGEN_ALIGN16;
-
-POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRT,
-                                  (float, x, x)
-                                  (float, y, y)
-                                  (float, z, z)
-                                  (float, intensity, intensity)
-                                  (uint32_t, t, t)
-                                  (uint16_t, reflectivity, reflectivity)
-                                  (uint8_t,  ring, ring)
-                                  (uint16_t, noise, noise)
-                                  (uint32_t, range, range))
-```
-
-Below is an example callback that converts the ros message `sensor_msgs/PointCloud2` to an object of type `pcl::Pointcloud<PointXYZIRT>` defined above:
-
-```cpp
-// Global variable to store the cloud data
-pcl::PointCloud<PointXYZIRT>::Ptr laserCloudIn;
-
-// Callback of topic /os1_cloud_node1/points
-void cloudHandler(const sensor_msgs::PointCloud2::ConstPtr &msg)
-{
-    laserCloudIn->clear();
-    pcl::fromROSMsg(*msg, *laserCloudIn);
-}
-
-// Subscribe to /os1_cloud_node1/points and allocate memory for the pointcloud somewhere in the main function
-// Example: laserCloudIn = pcl::PointCloud<PointXYZIRT>::Ptr(new pcl::PointCloud<PointXYZIRT>());
-```
-
-## UWB
-
-The UWB sensors used in this work are the P440 UWB Ranging and Communication sensor by Humatics.
-We converted the driver's custom message types to ROS messages, with some additional fields. The definitions can be found in the following [package](https://github.com/ntu-aris/uwb_driver). You can simply `git clone` the package to your workspace and do `catkin_make`. The following headers can be included in your code
-
-```cpp
-#include "uwb_driver/UwbRange.h"
-#include "uwb_driver/UwbEcho.h"
-```
-
-<p align="center">
-    <img src="./images/ranging_scheme.jpg" alt="Ranging Scheme" width="60%"/>
-</p>
-<p style="text-align: center;">Fig 3. Illustration of the ranging scheme </p> <a name="fig-ranging"></a>
-
-[Fig. 3](#fig-harware) illustrates our ranging scheme with 4 onboard UWB ranging nodes 200.A, 200.B, 201.A, 201.B, called requesters; and 3 anchor nodes with ID number 100, 101, 102, called responders. Each range measurement contains the IDs of both requester ID and the responder ID. By our subjective design in [Fig. 3](#fig-ranging) above, the three anchor nodes create a coordinate frame of referece {W}, where the anchor 100 is 1.5 m above the origin, the anchor 100 is 1.5 m above the +x axis, and anchor 101 is at the same height and on the -y side of the space.
-
-Let us take the example of the distance measurement from the onboard node 201.A and the anchor 101 (in the absence of noise) as follows
-<p align="center">
-<a href="https://www.codecogs.com/eqnedit.php?latex=d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{x}_{201.A}&space;-&space;\bf{y}_{101}&space;\right\|" target="_blank"><img src="https://latex.codecogs.com/png.latex?d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{p}_{201.A}&space;-&space;\bf{p}_{101}&space;\right\|" title="d_{201.A\to 101} = \left\|\bf{p} + \bf{R}.\bf{x}_{201.A} - \bf{y}_{101} \right\|" /></a>
-</p>
-
-In this case <img src="https://latex.codecogs.com/png.latex?\bf{p}"/> is the position of the UAV's body center, <img src="https://latex.codecogs.com/png.latex?\bf{R}"/> is its orientation, <img src="https://latex.codecogs.com/png.latex?\bf{p}_{201.A}"/> is the position of the requester node in the _body frame_, and <img src="https://latex.codecogs.com/png.latex?\bf{p}_{101}"/> is the position of the responder node in the user-defined frame {W}.
-
-In a typical navigation system, <img src="https://latex.codecogs.com/png.latex?\bf{p}"/> and <img src="https://latex.codecogs.com/png.latex?\bf{R}"/> will be the unknown quantities that one needs to estimate, while <img src="https://latex.codecogs.com/png.latex?\bf{p}_{201.A}"/> and <img src="https://latex.codecogs.com/png.latex?\bf{p}_{101}"/> are priors that can be retrieved from the `uwb_driver::UwbRange` message. [Fig. 4](#fig-range-msg) shows where these priors can be obtained in a message under the topic `/uwb_endorange_info`.
-
-<p align="center">
-    <img src="./images/uwb_range_msg.jpg" alt="range message" width="25%"/>
-</p>
-<p style="text-align: center;">Fig 4. The content of a range message </p> <a name="fig-range-msg"></a>
-
-Note that the anchor positions are calculated by simple triangulation of anchor-to-anchor distance under the topic `/uwb_exorange_info` at the beginning of the data collection test. User can opt to estimating these on their own by subscribing to the topic `/uwb_exorange_info`.

@@ -11,23 +11,27 @@
   url: "/getting-started/"
   side: left
   dropdown:
+  - title: "Overview"
+    url: "/getting-started/index#overview"
+    #url: "/design/grid/"
   - title: "Bucket Truck"
-    url: "/design/grid/"
+    url: "/getting-started/index#bucket-truck"  #注意 bucket-truck的格式
   - title: "Multisensors Platform"
-    url: "/getting-started/index#imu"
+    url: "/getting-started/index#multisensors-platform"
   - title: "Ground Truth"
-    url: "/design/page/"
+    url: "/getting-started/index#ground-truth"
 
 - title: "Sensors & Usage"
   url: "/design/"
   side: left
   dropdown:
   - title: "Overview"
-    url: "/design/grid/"
+    url: "/design/index#overview"
   - title: "IMU"
-    url: "/getting-started/index#imu"
+    url: "/design/index#imu"
   - title: "Lidar-Velodyne"
-    url: "/design/page/"
+    url: "/design/index#velodyne"
+    #url: "/design/page/"
   - title: "Lidar-Livox"
     url: "/design/post-left-sidebar/"
   - title: "mono-cameras"
