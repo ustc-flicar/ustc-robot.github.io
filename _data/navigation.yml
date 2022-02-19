@@ -53,11 +53,11 @@
   dropdown:
   - title: "Header with Full-Width-Image"
     url: "/design/header-full-width-image/"
-  - title: "Header with Image and Pattern"
+  - title: "LiDAR-IMU-Mono Camera"
     url: "/design/header-image-pattern/"
-  - title: "Header with image and color"
+  - title: "MEMS LiDAR-Mono Camera"
     url: "/design/header-image-color/"
-  - title: "Header Only With Logo"
+  - title: "Stereo Cameras"
     url: "/design/header-logo-only/"
   - title: "Header With Text"
     url: "/design/header-with-text/"
@@ -74,12 +74,15 @@
   - title: "Roadmap"
     url: "/roadmap/"
 
+- title: "Quick Use"
+  url: "/design/gallery/"
+  side: left
 
 
 - title: "Search"
   url: "/search/"
   side: right
 
-- title: "WZM"
+- title: "Author"
   url: "/contact/"
   side: right

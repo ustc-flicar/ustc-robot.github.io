@@ -20,140 +20,120 @@ The acquisition system is illustrated in [Fig. 1](#fig-acsystme_1). It consists 
 
 
 ## Bucket Truck
+Bucket Truck is a truck equipped with an extendable, hydraulic boom carrying a large bucket for raising workers to elevated, inaccessible areas. (from <a href="https://www.merriam-webster.com/dictionary/bucket%20truck">《Webster's Dictionary》</a>) <br>
 
-Our bucket Truck is <a href="../_layouts/xg_en_bucket_truck.html">XCMG-XGS5143JGKZ</a>
-The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS topics are reported in [Tab. 1](#tab-sensor-and-topic).
+According to the official website of <a href="https://versalift.com/">Versalift Company</a>, "Bucket trucks are incredibly important to the industries that use them. Because so much of the power grid is connected through overhead means, and it must be managed and maintained, aerial lifts are essential to both the Power Distribution and Power Transmission Industries. Nearly every home and business in the United States is connected to the power grid, and so bucket trucks can be found throughout big cities and small towns, in suburban communities and in business districts. And they are also widely used in Telecommunications, Tree Care, Sign and Lighting Industries etc."
+<br> 
+<!-- 斗臂车定义-->
 
+Our bucket Truck is produce by <a href="https://www.xcmg.com/en-ap/">XCMG Company</a>, the model is <a href="https://zj.lmjx.net/gaokongzuoyeche/xcmg/xgs5143jgkz6/param/">XCMG-XGS5143JGKZ</a>. <br> 
+The hydraulic arm of our bucket truck is produced by <a href="https://versalift.com/">Versalift Company</a>, the model is <a href="https://versalift.com/bucket-truck/vst-36-i/">VST-36-I</a>.
+<table><tr>
+<td><img src="../images/xg_bucket_truck.jpg" border=0  width="70%"/></td>
+<td><img src="../images/homepage_panel_one_lift.png" border=0 ></td>
+</tr></table>
+
+
+<table><tr>
+<td><img src="../images/hardware.jpg" border=0 width="90%"/></td>
+<td><img src="../images/yundong_shiyi.jpg" border=0 width="100%"></td>
+</tr></table>
 <a name="fig-hardware"></a>
 <p align="center">
-    <img src="../images/hardware.jpg" alt="Hardware Setup" width="50%"/>
+    <img src="../images/arm_chicun.jpg" alt="Hardware Setup" width="100%"/>
 </p>
-<p style="text-align: center;">Fig 1. The research UAV with its sensors and corresponding coordinate frames </p>
 
-<br>
-
-<a name="tab-sensor-and-topic"></a>
-<p style="text-align: center;">Table 1. Sensors and their ROS topics</p>
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:middle}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:middle}
-</style>
-<table class="tg">
-<thead>
-  <tr>
-    <th class="tg-c3ow">No.</th>
-    <th class="tg-c3ow">Sensor</th>
-    <th class="tg-c3ow">Manufacturer<br>&amp; Product name</th>
-    <th class="tg-c3ow">ROS topic name</th>
-    <th class="tg-c3ow">Message Type</th>
-    <th class="tg-c3ow">Nominal Rate</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tg-c3ow" rowspan="3">1</td>
-    <td class="tg-c3ow" rowspan="3">IMU</td>
-    <td class="tg-c3ow" rowspan="3">VectorNav<br>VN100</td>
-    <td class="tg-0pky">/imu/imu</td>
-    <td class="tg-0pky">sensor_msgs/Imu</td>
-    <td class="tg-c3ow">385 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">/imu/magnetic_field</td>
-    <td class="tg-0pky">sensor_msgs/MagneticField</td>
-    <td class="tg-c3ow">385 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">/imu/temperature</td>
-    <td class="tg-0pky">sensor_msgs/Temperature</td>
-    <td class="tg-c3ow">385 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow" rowspan="2">2</td>
-    <td class="tg-c3ow" rowspan="2">Horizontal Lidar</td>
-    <td class="tg-c3ow" rowspan="2">Ouster<br>OS1-16 gen 1</td>
-    <td class="tg-0pky">/os1_cloud_node1/imu</td>
-    <td class="tg-0pky">sensor_msgs/Imu</td>
-    <td class="tg-c3ow">100 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">/os1_cloud_node1/points</td>
-    <td class="tg-0pky">sensor_msgs/PointCloud2</td>
-    <td class="tg-c3ow">10 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow" rowspan="2">3</td>
-    <td class="tg-c3ow" rowspan="2">Vertical Lidar</td>
-    <td class="tg-c3ow" rowspan="2">Ouster<br>OS1-16 gen 1</td>
-    <td class="tg-0pky">/os1_cloud_node2/imu</td>
-    <td class="tg-0pky">sensor_msgs/Imu</td>
-    <td class="tg-c3ow">100 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">/os1_cloud_node2/points</td>
-    <td class="tg-0pky">sensor_msgs/PointCloud2</td>
-    <td class="tg-c3ow">10 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">4</td>
-    <td class="tg-c3ow">Camera 1</td>
-    <td class="tg-c3ow">uEye 1221 LE<br>(monochome)</td>
-    <td class="tg-0pky">/left/image_raw</td>
-    <td class="tg-0pky">sensor_msgs/Image</td>
-    <td class="tg-c3ow">10 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">5</td>
-    <td class="tg-c3ow">Camera 2</td>
-    <td class="tg-c3ow">uEye 1221 LE<br>(monochome)</td>
-    <td class="tg-0pky">/right/image_raw</td>
-    <td class="tg-0pky">sensor_msgs/Image</td>
-    <td class="tg-c3ow">10 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow" rowspan="3">6</td>
-    <td class="tg-c3ow" rowspan="3">UWB</td>
-    <td class="tg-c3ow" rowspan="3">Humatic P440</td>
-    <td class="tg-0pky">/uwb_endorange_info</td>
-    <td class="tg-0pky">uwb_driver/UwbRange</td>
-    <td class="tg-c3ow">68.571 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">/uwb_exorange_info</td>
-    <td class="tg-0pky">uwb_driver/UwbEcho</td>
-    <td class="tg-c3ow">5.714 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-0pky">/node_pos_sc</td>
-    <td class="tg-0pky">nav_msgs/Path</td>
-    <td class="tg-c3ow">5.714 Hz</td>
-  </tr>
-  <tr>
-    <td class="tg-c3ow">7</td>
-    <td class="tg-c3ow">3D Laser Tracker</td>
-    <td class="tg-c3ow">Leica MS60<br>TotalStation</td>
-    <td class="tg-0pky">/leica/pose/relative</td>
-    <td class="tg-0pky">geometry_msgs/PoseStamped</td>
-    <td class="tg-c3ow">20 Hz</td>
-  </tr>
-</tbody>
-</table>
+<p style="text-align: center;">Fig 2. Some basic parameters of the Bucket Truck. <br> You can get more information form: ①<a href="https://zj.lmjx.net/gaokongzuoyeche/xcmg/xgs5143jgkz6/param/">XCMG-XGS5143JGKZ</a>. ② <a href="https://versalift.com/bucket-truck/vst-36-i/">VST-36-I</a>. ③ <a href="https://versalift.com/wp-content/uploads/2017/05/VST_36_404752-I_Final.pdf">Spec Sheet</a></p>.
 
 ## MultiSensors Platform
 
-The IMU being used here is a 9-DoF inertia sensor. The frame of reference attached to this sensor is considered the _body frame_ of the whole setup.
+
+ <table>
+ <td width="40%">
+ <table>
+	<tr>
+	    <th>Platform</th>
+	</tr >
+	<tr>
+      <td rowspan="5"><img src="../images/platform.png" /></td>
+	</tr>
+
+</table>
+</td>
+<td>
+ <table>
+ <thead>
+	<tr>
+      <th>Sensor</th>
+      <th>type</th> 
+      <th>Rate</th>
+      <th>Pics</th> 
+	</tr >
+  </thead>
+	<tr>
+      <td width="25%">INS/IMU</td>
+      <td width="30%">Xsens MTi-G-710</td>
+      <td width="15%">400 Hz</td>
+      <td><img src="../images/xsens.jpg" width="30%"/></td>
+	</tr>
+  <tr >
+      <td width="25%">Horizontal Lidar</td>
+      <td width="30%">Velodyne HDL-32E</td>
+      <td width="10%">10 Hz</td>
+      <td><img src="../images/Velodyne_32e.png" width="30%"/></td>
+	</tr>
+	<tr>
+	    <td width="25%">Vertical Lidar</td>
+      <td width="30%">Velodyne VLP-32C</td>
+      <td width="10%">10 Hz</td>
+      <td><img src="../images/Velodyne_Ultrapuck.png" width="30%"/></td>
+	</tr>
+	<tr>
+	    <td width="25%">MEMS Lidar</td>
+      <td width="30%">LiVOX Avia</td>
+      <td width="10%">10 Hz</td>
+      <td><img src="../images/LiVOX_Avia.jpg" width="30%"/></td>
+	</tr>
+	<tr>
+	    <td width="25%">Stereo Camera front</td>
+      <td width="30%">PointGrey Bumblebee xb3</td>
+      <td width="10%">16 Hz</td>
+      <td><img src="../images/bumblebee_xb3.jpg" width="40%"/></td>
+	</tr>
+  <tr>
+	    <td width="25%">Stereo Camera back</td>
+      <td width="30%">PointGrey Bumblebee xb2</td>
+      <td width="10%">20 Hz</td>
+      <td><img src="../images/bumblebee_xb2.jpg" width="30%"/></td>
+	</tr>
+	<tr>
+	     <td width="25%">Mono Camera 1<br>(with HDL-32E)</td>
+      <td width="30%">PointGrey CLMN-13S2C-CS</td>
+      <td width="10%">18 Hz</td>
+      <td><img src="../images/CMLN-13S2C-CS.jpg" width="30%"/></td>
+	</tr>
+	<tr>
+	     <td width="25%">Mono Camera 2<br>(with LiVOX Avia)</td>
+      <td width="30%">Hikvision MV-CE060-10UC</td>
+      <td width="10%">40 Hz</td>
+      <td><img src="../images/Hikvision MV-CE060-10UC.png" width="30%"/></td>
+	</tr>
+</table>
+</td>
+</table>
 
 <p align="center">
-    <img src="./images/vn100.jpg" alt="Hardware Setup" width="30%"/>
+    <img src="../images/sersor_shiyitu.jpg" alt="Hardware Setup" />
 </p>
-<p style="text-align: center;">Fig 2. The IMU frame of reference </p> <a name="fig-hardware"></a>
 
-Internally, a filter fuses gyroscope, acceleration, and magnetic field measurements and outputs the orientation result on the `/imu/imu` topic. Though our dataset does not have orientation groundtruth, user can consider this orientation estimate as one.
+<table>
+<tr>
+<td><img src="../images/gt_mtpl_shiyi.jpg" border=0  width="80%"/></td>
+<td><img src="../images/get_start_mtpl.jpg" border=0 width="100%"></td>
+</tr>
+</table>
+
+<p style="text-align: center;">Fig 3. The MultiSensors Platform </p> <a name="fig-hardware"></a>
 
 ## Ground Truth
 The two cameras are externally triggered to capture images at the same time. For images triggered at the same time, their time stamps are different by **at most 3 ms**. This satisfies the default hardcoded threshold in VINS-Fusion. See our tutorial on how to run VINS-Fusion with the dataset [here]().

@@ -11,6 +11,80 @@ permalink: "/design/"
 
 The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS topics are reported in [Tab. 1](#tab-sensor-and-topic).
 
+<table>
+ <td width="40%">
+ <table>
+	<tr>
+	    <th>Platform</th>
+	</tr >
+	<tr>
+      <td rowspan="5"><img src="../images/platform.png" /></td>
+	</tr>
+
+</table>
+</td>
+<td>
+ <table>
+ <thead>
+	<tr>
+      <th>Sensor</th>
+      <th>type</th> 
+      <th>Rate</th>
+      <th>Pics</th>
+	</tr >
+  </thead>
+	<tr>
+      <td width="25%">INS/IMU</td>
+      <td width="30%">Xsens MTi-G-710</td>
+      <td width="15%">400 Hz</td>
+      <td><img src="../images/xsens.jpg" width="30%"/></td>
+	</tr>
+  <tr >
+      <td width="25%">Horizontal Lidar</td>
+      <td width="30%">Velodyne HDL-32E</td>
+      <td width="10%">10 Hz</td>
+      <td><img src="../images/Velodyne_32e.png" width="30%"/></td>
+	</tr>
+	<tr>
+	    <td width="25%">Vertical Lidar</td>
+      <td width="30%">Velodyne VLP-32C</td>
+      <td width="10%">10 Hz</td>
+      <td><img src="../images/Velodyne_Ultrapuck.png" width="30%"/></td>
+	</tr>
+	<tr>
+	    <td width="25%">MEMS Lidar</td>
+      <td width="30%">LiVOX Avia</td>
+      <td width="10%">10 Hz</td>
+      <td><img src="../images/LiVOX_Avia.jpg" width="30%"/></td>
+	</tr>
+	<tr>
+	    <td width="25%">Stereo Camera front</td>
+      <td width="30%">PointGrey BBX3-13S2C-38</td>
+      <td width="10%">16 Hz</td>
+      <td><img src="../images/bumblebee_xb3.jpg" width="40%"/></td>
+	</tr>
+  <tr>
+	    <td width="25%">Stereo Camera back</td>
+      <td width="30%">PointGrey BBX2-08S2C-38</td>
+      <td width="10%">20 Hz</td>
+      <td><img src="../images/bumblebee_xb2.jpg" width="30%"/></td>
+	</tr>
+	<tr>
+	     <td width="25%">Mono Camera 1<br>(with HDL-32E)</td>
+      <td width="30%">PointGrey CLMN-13S2C-CS</td>
+      <td width="10%">18 Hz</td>
+      <td><img src="../images/CMLN-13S2C-CS.jpg" width="30%"/></td>
+	</tr>
+	<tr>
+	     <td width="25%">Mono Camera 2<br>(with LiVOX Avia)</td>
+      <td width="30%">Hikvision MV-CE060-10UC</td>
+      <td width="10%">40 Hz</td>
+      <td><img src="../images/Hikvision MV-CE060-10UC.png" width="30%"/></td>
+	</tr>
+</table>
+</td>
+</table>
+
 <a name="fig-hardware"></a>
 <p align="center">
     <img src="./images/hardware.jpg" alt="Hardware Setup" width="50%"/>
