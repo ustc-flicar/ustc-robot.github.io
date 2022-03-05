@@ -10,7 +10,6 @@ sort: 1
 
 The acquisition system is illustrated in [Fig. 1](#fig-acsystme_1). It consists with three parts: Bucket Truck, Multisensors Platform and Ground Truth System.The bucket truck uses a hydraulic arm to lift the multi-sensor data acquisition system into the air. Well-calibrated and well-synchronized sensors such as cameras, Lidars, and IMUs collect multimodal data of the environment and motion information of the end of hydraulic arm. The laser tracker on the ground tracks the target prism on the motion platform, which provides millimeter-accurate 3D motion trajectories to provide benchmarks for positioning tasks.
 
-<a name="fig-acsystme_1"></a>
 <p align="center">
     <img src="../images/acquisition_page1.jpg" alt="Hardware Setup" width="70%"/>
 </p>
