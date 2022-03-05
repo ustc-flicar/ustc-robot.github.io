@@ -1,10 +1,9 @@
 ---
 layout: page-fullwidth
-title: "Acquisition System"
+show_meta: false
 header:
    image_fullwidth  : "header_homepage_13.jpg"
 permalink           : "/getting-started/"
-sort: 1
 ---
 ## Overview
 
