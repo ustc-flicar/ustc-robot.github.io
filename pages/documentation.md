@@ -1,7 +1,7 @@
 ---
 layout: page-fullwidth
-title: "Theme Documentation"
-subheadline: "How to use Feeling Responsive"
+title: "Documentation"
+subheadline: "USTC FlyingCar Dataset"
 teaser: "The documentation is a work in progress..."
 permalink: "/documentation/"
 header: no
@@ -21,7 +21,7 @@ header: no
 <div class="medium-8 medium-pull-4 columns" markdown="1">
 {% include _improve_content.html %}
 
-## Edit Navigation   {#edit-navigation}
+## About the Dataset   {#edit-navigation}
 
 To customize the navigation of *Feeling Responsive*, you have to open the [YAML](https://jekyllrb.com/docs/datafiles/)-file `_data/navigation.yml`. Edit the data and adjust it to your own needs.
 

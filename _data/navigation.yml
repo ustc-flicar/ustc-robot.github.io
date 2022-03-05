@@ -47,12 +47,14 @@
 #  - title: "Portfolio"
 #    url: "/design/portfolio/"
 
-- title: "Sensor Calibration"
+- title: "Sensors Sync & Calib"
   url: "/headers/"
   side: left
   dropdown:
+  - title: "Time Synchronization"
+    url: "/headers/index#time-synchronization"
   - title: "IMU"
-    url: "/design/header-full-width-image/"
+    url: "/headers/index#imu"
   - title: "Mono Cameras"
     url: "/design/header-image-pattern/"
   - title: "Stereo Cameras"
