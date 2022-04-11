@@ -1,7 +1,7 @@
 ---
 layout: page-fullwidth
 show_meta: false
-#title: "Style your content!"
+title: "Sensors & Usage"
 #subheadline: "Layouts of Feeling Responsive"
 header:
    image_fullwidth: "header_unsplash_5.jpg"
@@ -18,9 +18,18 @@ The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS
 	    <th>Platform</th>
 	</tr >
 	<tr>
-      <td rowspan="5"><img src="../images/platform.png" /></td>
+      <td rowspan="5"><img src="../images/Okapia _platform.png" width="97%"/></td>
 	</tr>
-
+</table>
+<table>
+	<tr>
+	    <th>Vehicle</th>
+          <th>Pic</th> 
+	</tr >
+	<tr>
+      <td width="30%">Husky A200</td>
+      <td><img src="../images/Husky_dipan.jpg" width="60%"/></td>
+	</tr>
 </table>
 </td>
 <td>
@@ -39,7 +48,7 @@ The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS
       <td width="15%">400 Hz</td>
       <td><img src="../images/xsens.jpg" width="30%"/></td>
 	</tr>
-  <tr >
+      <tr >
       <td width="25%">Horizontal Lidar</td>
       <td width="30%">Velodyne HDL-32E</td>
       <td width="10%">10 Hz</td>
@@ -60,25 +69,31 @@ The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS
 	<tr>
 	    <td width="25%">Stereo Camera front</td>
       <td width="30%">PointGrey BBX3-13S2C-38</td>
-      <td width="10%">16 Hz</td>
+      <td width="10%">10 Hz</td>
       <td><img src="../images/bumblebee_xb3.jpg" width="40%"/></td>
 	</tr>
-  <tr>
+      <tr>
 	    <td width="25%">Stereo Camera back</td>
       <td width="30%">PointGrey BBX2-08S2C-38</td>
-      <td width="10%">20 Hz</td>
+      <td width="10%">10 Hz</td>
       <td><img src="../images/bumblebee_xb2.jpg" width="30%"/></td>
 	</tr>
 	<tr>
-	     <td width="25%">Mono Camera 1<br>(with HDL-32E)</td>
+	     <td width="25%">Mono Camera 1<br>(with VLP-32C)</td>
       <td width="30%">PointGrey CLMN-13S2C-CS</td>
-      <td width="10%">16 Hz</td>
+      <td width="10%">10 Hz</td>
       <td><img src="../images/CMLN-13S2C-CS.jpg" width="30%"/></td>
 	</tr>
 	<tr>
-	     <td width="25%">Mono Camera 2<br>(with LiVOX Avia)</td>
+	     <td width="25%">Mono Camera 2<br>(with HDL-32E)</td>
+      <td width="30%">Hikvision MV-CB016-10GC-C</td>
+      <td width="10%">20 Hz</td>
+      <td><img src="../images/Hikvision_MV-CB016-10GC-C.png" width="40%"/></td>
+	</tr>
+      <tr>
+      <td width="25%">Mono Camera 3<br>(with LiVOX Avia)</td>
       <td width="30%">Hikvision MV-CE060-10UC</td>
-      <td width="10%">40 Hz</td>
+      <td width="10%">20 Hz</td>
       <td><img src="../images/Hikvision MV-CE060-10UC.png" width="30%"/></td>
 	</tr>
 </table>
@@ -90,9 +105,10 @@ The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS
 我们使用的IMU是Xsens MTi-G-710 GNSS/INS, 它是一个9-DoF传感器，可以提供三轴加速度、三轴角速度和三轴磁力计的数据，有许多SLAM算法例如LIO-SAM需要提供初始化的横滚、俯仰和偏航角，
 rosbag的话题名称是`/imu/data`
 
-<p align="center">
-    <img src="../images/xsens.jpg" alt="Hardware Setup" width="30%"/>
-</p>
+<table><tr>
+<td><img src="../images/xsens.jpg" alt="Hardware Setup" width="50%"/></td>
+<td><img src="../images/xsens_zuobiaoxi.png" border=0 width="80%"></td>
+</tr></table>
 <p style="text-align: center;">Fig 2. The IMU frame of reference </p> <a name="fig-hardware"></a>
 
 ## Mechanical Lidar
@@ -142,7 +158,7 @@ void cloudHandler(const sensor_msgs::PointCloud2::ConstPtr &msg)
 ```
 ### Vertical Lidar
 垂直方向的激光雷达型号是Velodyne VLP-32C(Ultra Puck), The VLP-32C sensor uses 32 infra-red (IR) lasers paired with IR detectors to measure distances to objects. The device is mounted securely within a compact, weather-resistant housing. The assembly of laser/detector pairs spins rapidly within
-its fixed housing to scan the surrounding environment, firing pairs of lasers approximately 18,000 times per second, providing, in real-time, a rich set of 3D point data.
+its fixed housing to scan the surrounding environment, firing pairs of lasers approximately 18,000 times per second, providing, in real-time, a rich set of 3D point data.
 
 ## MEMS Lidar
 

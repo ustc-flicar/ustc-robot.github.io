@@ -9,10 +9,14 @@ permalink: "/headers/"
 ---
 
 ## Time Synchronization
+<p align="center">
+    <img src="../images/time_system.png" alt="Time Sync System" width="100%"/>
+</p>
 
 ## IMU
-
+There are two IMUs in the system. First is Xsens MTi-G-710 INS/IMU, this is the main IMU of the system. Second is the IMU in LiVOX Lidar.
 ## Mono Cameras
+There are 8 mono cameras in the system(include each mono camera in Bumblebee stereo cameras). 
 
 ## Stereo Cameras
 

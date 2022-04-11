@@ -48,7 +48,7 @@ homepage: true
 ---
 
 # Welcome to the USTC FlyingCar Dataset!
-##### We take advantage of our autonomous driving platform Annieway to develop novel challenging real-world computer vision benchmarks. Our tasks of interest are: stereo, optical flow, visual odometry, 3D object detection and 3D tracking. For this purpose, we equipped a standard station wagon with two high-resolution color and grayscale video cameras. 
+##### We take advantage of our autonomous acquisition system "Giraffe" to develop novel challenging real-world computer vision benchmarks. Our tasks of interest are: stereo, optical flow, visual odometry, 3D object detection, 3D tracking and SLAM. For this purpose, we equipped a multisensors platform with two high-resolution color and grayscale video cameras. 
 
 
 
