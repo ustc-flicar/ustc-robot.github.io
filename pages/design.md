@@ -107,10 +107,12 @@ The IMU we use is Xsens MTi-G-710. It is a 9-DoF inertia sensor which gives roll
 For more information of Xsens MTi-G-710：
 <a href="../pdf/MTi_usermanual.pdf">User Manual of Xsens_MTi</a>
 
-<table><tr>
+<table>
+<tr>
 <td><img src="../images/xsens.jpg" alt="Hardware Setup" width="50%"/></td>
-<td><img src="../images/xsens_zuobiaoxi.png" width="80%"></td>
-</tr></table>
+<td><img src="../images/Xsens_zuobiaoxi.png" width="80%"></td>
+</tr>
+</table>
 <p style="text-align: center;">Fig 2. The IMU frame of reference </p> <a name="fig-hardware"></a>
 
 ## Mechanical Lidar
