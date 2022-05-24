@@ -101,9 +101,11 @@ The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS
 </table>
 
 ## IMU
+The IMU we use is Xsens MTi-G-710. It is a 9-DoF inertia sensor which gives roll, pitch, and yaw estimatio. 9-DoF IMU data is necessarily for some slam algorithms such as <a href="https://github.com/TixiaoShan/LIO-SAM">LIO-SAM</a>, our data can meet the requirment.
 
-我们使用的IMU是Xsens MTi-G-710 GNSS/INS, 它是一个9-DoF传感器，可以提供三轴加速度、三轴角速度和三轴磁力计的数据，有许多SLAM算法例如LIO-SAM需要提供初始化的横滚、俯仰和偏航角，
-rosbag的话题名称是`/imu/data`
+
+For more information of Xsens MTi-G-710：
+<a href="../pdf/MTi_usermanual.pdf">User Manual of Xsens_MTi</a>
 
 <table><tr>
 <td><img src="../images/xsens.jpg" alt="Hardware Setup" width="50%"/></td>
@@ -112,10 +114,36 @@ rosbag的话题名称是`/imu/data`
 <p style="text-align: center;">Fig 2. The IMU frame of reference </p> <a name="fig-hardware"></a>
 
 ## Mechanical Lidar
-### Horizontal Lidar
-水平方向的激光雷达是Velodyne HDL-32E, 这个型号的雷达一共有32线激光发射器，
-<a href="../pdf/MANUAL_USERS_HDL32E.pdf">链接文本</a>
-```c
+### Horizontal Lidar 1
+The first horizontal Lidar in the middle of the multisensors platform is Velodyne HDL-32E.
+<a href="../pdf/MANUAL_USERS_HDL32E.pdf">User Manual of Velodyne_HDL_32E</a>
+
+```cpp
+struct PointXYZIRT
+{
+    PCL_ADD_POINT4D
+    PCL_ADD_INTENSITY;
+    uint16_t ring;
+    float time;
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZIRT,  
+                                    (float, x, x) 
+                                    (float, y, y) 
+                                    (float, z, z) 
+                                    (float, intensity, intensity)
+                                    (uint16_t, ring, ring) 
+                                    (float, time, time))
+```
+### Vertical Lidar
+垂直方向的激光雷达型号是Velodyne VLP-32C(Ultra Puck), The VLP-32C sensor uses 32 infra-red (IR) lasers paired with IR detectors to measure distances to objects. The device is mounted securely within a compact, weather-resistant housing. The assembly of laser/detector pairs spins rapidly within
+its fixed housing to scan the surrounding environment, firing pairs of lasers approximately 18,000 times per second, providing, in real-time, a rich set of 3D point data.
+
+### Horizontal Lidar 2
+The second horizontal Lidar in the middle of the multisensors platform is Ouster OS0-128.
+
+```cpp
 struct PointXYZIRT
 {
     PCL_ADD_POINT4D;
@@ -140,31 +168,36 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRT,
                                   (uint32_t, range, range))
 ```
 
-Below is an example callback that converts the ros message `sensor_msgs/PointCloud2` to an object of type `pcl::Pointcloud<PointXYZIRT>` defined above:
-
-```cpp
-// Global variable to store the cloud data
-pcl::PointCloud<PointXYZIRT>::Ptr laserCloudIn;
-
-// Callback of topic /os1_cloud_node1/points
-void cloudHandler(const sensor_msgs::PointCloud2::ConstPtr &msg)
-{
-    laserCloudIn->clear();
-    pcl::fromROSMsg(*msg, *laserCloudIn);
-}
-
-// Subscribe to /os1_cloud_node1/points and allocate memory for the pointcloud somewhere in the main function
-// Example: laserCloudIn = pcl::PointCloud<PointXYZIRT>::Ptr(new pcl::PointCloud<PointXYZIRT>());
-```
-### Vertical Lidar
-垂直方向的激光雷达型号是Velodyne VLP-32C(Ultra Puck), The VLP-32C sensor uses 32 infra-red (IR) lasers paired with IR detectors to measure distances to objects. The device is mounted securely within a compact, weather-resistant housing. The assembly of laser/detector pairs spins rapidly within
-its fixed housing to scan the surrounding environment, firing pairs of lasers approximately 18,000 times per second, providing, in real-time, a rich set of 3D point data.
-
 ## MEMS Lidar
+We Use DJI LiVOX Avia Lidar in our dataset. It
 
+Livox customized data package format, as follows:
+```cpp
+Header header             # ROS standard message header
+uint64 timebase           # The time of first point
+uint32 point_num          # Total number of pointclouds
+uint8  lidar_id           # Lidar device id number
+uint8[3]  rsvd            # Reserved use
+CustomPoint[] points      # Pointcloud data
+```
+Customized Point Cloud (CustomPoint) format in the above customized data package:
+```cpp
+uint32 offset_time      # offset time relative to the base time
+float32 x               # X axis, unit:m
+float32 y               # Y axis, unit:m
+float32 z               # Z axis, unit:m
+uint8 reflectivity      # reflectivity, 0~255
+uint8 tag               # livox tag
+uint8 line              # laser number in lidar
+```
 
 ## Stereo Cameras
+There are three Stereo Cameras: Bumblebee_xb3(Frount View),Bumblebee_xb2(Back view) and ZED 2i(Below view).
 
 ## Mono Cameras
 
 ## Laser Tracker
+The ground truth of our dataset is provided by API T3 Laser Tracker.
+<a href="https://www.adm3d.com/Home/T3Tracker">https://www.adm3d.com/Home/T3Tracker</a>
+
+<img src="../images/API_T3_Laser_Tracker.png" width="100%"/>

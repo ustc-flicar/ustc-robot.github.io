@@ -8,11 +8,13 @@ layout: frontpage
 header:
   image_fullwidth: header_unsplash_12.jpg
 
+
 callforaction:
   url: https://www.google.com/chrome/?brand=BNSD&gclid=EAIaIQobChMI9ejb1fP_9QIVo5vCCh1EWgwXEAAYASAAEgKeg_D_BwE&gclsrc=aw.ds
   text: Google Chrome browser is recommended to open this website for faster response ›
-  style: alert
+  style: terminal
 permalink: /index.html
+
 
 widget1:
   title: "Downloads"

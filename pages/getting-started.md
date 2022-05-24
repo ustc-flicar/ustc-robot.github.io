@@ -70,11 +70,17 @@ The hydraulic arm of our bucket truck is produced by <a href="https://versalift.
       <td width="15%">400 Hz</td>
       <td><img src="../images/xsens.jpg" width="30%"/></td>
 	</tr>
-  <tr >
-      <td width="25%">Horizontal Lidar</td>
+      <tr >
+      <td width="25%">Horizontal Lidar 1</td>
       <td width="30%">Velodyne HDL-32E</td>
       <td width="10%">10 Hz</td>
       <td><img src="../images/Velodyne_32e.png" width="30%"/></td>
+	</tr>
+      <tr >
+      <td width="25%">Horizontal Lidar 2</td>
+      <td width="30%">Ouster OS0-128</td>
+      <td width="10%">20 Hz</td>
+      <td><img src="../images/OS0-128.png" width="30%"/></td>
 	</tr>
 	<tr>
 	    <td width="25%">Vertical Lidar</td>
@@ -130,4 +136,4 @@ The hydraulic arm of our bucket truck is produced by <a href="https://versalift.
 <p style="text-align: center;">Fig 3. The MultiSensors Platform </p> <a name="fig-hardware"></a>
 
 ## Ground Truth
-The two cameras are externally triggered to capture images at the same time. For images triggered at the same time, their time stamps are different by **at most 3 ms**. This satisfies the default hardcoded threshold in VINS-Fusion. See our tutorial on how to run VINS-Fusion with the dataset [here]().
+We use the Laser Tracker API T3 to get the ground truth of our dataset. The target ball 

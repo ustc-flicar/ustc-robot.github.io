@@ -13,8 +13,8 @@ header              : no
 
 ## Basic Information
 <td width="750" align="left" valign="middle" class="rightone">
-            &nbsp;Ziming Wang, born on March 6, 2001 in <a href="https://en.wikipedia.org/wiki/Jilin_City">Jilin City</a>, Jilin Province, who is a junior at <a herf="https://en.wikipedia.org/wiki/University_of_Science_and_Technology_of_China">University of Science and Technology of China(USTC)</a> now.<br/>
-            &nbsp;2015.9-2018.6. A student at <a herf="https://en.wikipedia.org/wiki/Jilin_City_No.1_High_School">Jilin City No.1 High School</a><br />
+            &nbsp;Ziming Wang, born on March 6, 2001 in <a href="https://en.wikipedia.org/wiki/Jilin_City">Jilin City</a>, Jilin Province, who is a junior at <a href="https://en.wikipedia.org/wiki/University_of_Science_and_Technology_of_China">University of Science and Technology of China(USTC)</a> now.<br/>
+            &nbsp;2015.9-2018.6. A student at <a href="https://en.wikipedia.org/wiki/Jilin_City_No.1_High_School">Jilin City No.1 High School</a><br />
             &nbsp;2018.9-2019.6. A student at School of Information Science, USTC <br />
             &nbsp;2019.6-2020.6. A student at School of Engineering Science, USTC<br />
             &nbsp;2020.6-now. A student at School of Computer Science, USTC
