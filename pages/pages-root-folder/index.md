@@ -20,17 +20,17 @@ widget1:
   title: "Downloads"
   url: '/blog/index.html'
   image: unsplash_9.jpg
-  text: 'Every good portfolio website has a blog with fresh news, thoughts and develop&shy;ments of your activities. <em>Feeling Responsive</em> offers you a fully functional blog with an archive page to give readers a quick overview of all your posts.'
+  text: ''
 widget2:
   title: "Acquisition System"
   url: '/getting-started/index.html'
   image: acquisition_page1.jpg
-  text: 'Every good portfolio website has a blog with fresh news, thoughts and develop&shy;ments of your activities. <em>Feeling Responsive</em> offers you a fully functional blog with an archive page to give readers a quick overview of all your posts.'
+  text: ''
 widget3:
   title: "Sensors & Usage"
   url: '/design/index.html'
   image: sensors_page1.jpg
-  text: '<em>Feeling Responsive</em> is free and licensed under a MIT License. Make it your own and start building. The code is well-documented and explains you how it works.'
+  text: ''
 #
 # Use the call for action to show a button on the frontpage
 #
