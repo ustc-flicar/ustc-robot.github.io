@@ -109,7 +109,7 @@ For more information of Xsens MTi-G-710：
 
 <table><tr>
 <td><img src="../images/xsens.jpg" alt="Hardware Setup" width="50%"/></td>
-<td><img src="../images/xsens_zuobiaoxi.png" border=0 width="80%"></td>
+<td><img src="../images/xsens_zuobiaoxi.png" width="80%"></td>
 </tr></table>
 <p style="text-align: center;">Fig 2. The IMU frame of reference </p> <a name="fig-hardware"></a>
 
