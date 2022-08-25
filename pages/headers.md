@@ -69,7 +69,7 @@ We use <a href="https://github.com/search?q=Kalibr">Kalibr</a> to calib IMU and 
 ### 2.Time estimate
 <table><tr>
 <td width="60%"><img src="../images/VIO_time_trigger.png" width="100%"></td>
-<td>Put the </td>
+<td>The IMU sensor is synced by PPS signal(1Hz Yellow).<br><br> IMU sync_out trigger line output the trigger signal of camera(20Hz Blue). </td>
 </tr></table>
 
 ## Velodyne-IMU

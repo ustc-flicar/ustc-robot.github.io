@@ -15,10 +15,9 @@ callforaction:
   style: terminal
 permalink: /index.html
 
-
 widget1:
   title: "Downloads"
-  url: '/blog/index.html'
+  url: '/datasets/index.html'
   image: unsplash_9.jpg
   text: ''
 widget2:
@@ -51,6 +50,36 @@ homepage: true
 
 # Welcome to the USTC FlyingCar Dataset!
 ##### We take advantage of our autonomous acquisition system "Giraffe" to develop novel challenging real-world computer vision benchmarks. Our tasks of interest are: stereo, optical flow, visual odometry, 3D object detection, 3D tracking and SLAM. For this purpose, we equipped a multisensors platform with two high-resolution color and grayscale video cameras. 
+
+## Are We Ready for Aerial Work Robots?
+<table>
+  <tr>
+    <td><img src="../../images/z_aerial_robot.png" width = "90%"></td>
+  </tr>
+</table>
+
+### Some aerial work scenarios in our daily life:
+<table>
+  <tr>
+    <td><img src="../../images/z_aerial_power.png"></td>
+    <td><img src="../../images/z_aerial_rocket.png" width = "60%"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="../../images/z_aerial_build.png" border=0></td>
+    <td><img src="../../images/z_aerial_tree.png" border=0></td>
+  </tr>
+</table>
+
+## The Vision of Our Research: Flying Car
+<table>
+  <tr>
+    <td><img src="../../images/flyingcar_1.png" width = "90%"></td>
+  </tr>
+</table>
+
 
 
 

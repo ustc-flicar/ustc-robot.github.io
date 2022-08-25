@@ -3,7 +3,7 @@ layout              : page
 title               : "Contact"
 meta_title          : "Contact and use our contact form"
 subheadline         : "Contact Form"
-teaser              : "Hello! I'm Ziming Wang, the Author of the website, Nice to meet you!"
+teaser              : "Hello! I'm Ziming Wang, the Author of the website and dataset, Nice to meet you!"
 permalink           : "/contact/"
 header              : no
 ---

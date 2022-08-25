@@ -139,10 +139,16 @@ POINT_CLOUD_REGISTER_POINT_STRUCT (PointXYZIRT,
                                     (float, time, time))
 ```
 ### Vertical Lidar
-垂直方向的激光雷达型号是Velodyne VLP-32C(Ultra Puck), The VLP-32C sensor uses 32 infra-red (IR) lasers paired with IR detectors to measure distances to objects. The device is mounted securely within a compact, weather-resistant housing. The assembly of laser/detector pairs spins rapidly within
+垂直方向的Lidar is Velodyne VLP-32C(Ultra Puck).<a href="../pdf/VLP32CManual.pdf">User Manual of Velodyne_VLP_32C</a><br> The VLP-32C sensor uses 32 infra-red (IR) lasers paired with IR detectors to measure distances to objects. The device is mounted securely within a compact, weather-resistant housing. The assembly of laser/detector pairs spins rapidly within
 its fixed housing to scan the surrounding environment, firing pairs of lasers approximately 18,000 times per second, providing, in real-time, a rich set of 3D point data.
 
+## Digital Lidar
+About digital lidar:
+<td><img src="../images/digital_lidar_ouster.jpg" alt="Hardware Setup" width="50%"/></td>
+Ouster Company Said:<a href="https://ouster.com/blog/why-digital-lidar-is-the-future/">https://ouster.com/blog/why-digital-lidar-is-the-future/</a>
+
 ### Horizontal Lidar 2
+
 The second horizontal Lidar in the middle of the multisensors platform is Ouster OS0-128.
 
 ```cpp
@@ -172,6 +178,10 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRT,
 
 ## MEMS Lidar
 We Use DJI LiVOX Avia Lidar in our dataset. It
+
+With foundation responsive videos are easy. [More ›](http://foundation.zurb.com/docs/components/flex_video.html)
+
+<iframe src="../video/avia_scan.mp4" frameborder="0" allowfullscreen style="width:50%;height:330px;" ></iframe>
 
 Livox customized data package format, as follows:
 ```cpp

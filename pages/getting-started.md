@@ -11,6 +11,7 @@ The acquisition system is illustrated in [Fig. 1](#fig-acsystme_1). It consists 
 
 <p align="center">
     <img src="../images/acquisition_page1.jpg" alt="Hardware Setup" width="70%"/>
+    <img src="../images/acqusition_system_all.jpg" alt="Hardware Setup" width="70%"/>
 </p>
 <p style="text-align: center;">Fig 1. "Giraffe" Acquisition System </p>
 
