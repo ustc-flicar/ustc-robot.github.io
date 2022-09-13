@@ -11,93 +11,131 @@ permalink: "/design/"
 
 The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS topics are reported in [Tab. 1](#tab-sensor-and-topic).
 
-<table>
- <td width="40%">
- <table>
-	<tr>
-	    <th>Platform</th>
-	</tr >
-	<tr>
-      <td rowspan="5"><img src="../images/Okapia _platform.png" width="97%"/></td>
-	</tr>
-</table>
-<table>
-	<tr>
-	    <th>Vehicle</th>
-          <th>Pic</th> 
-	</tr >
-	<tr>
-      <td width="30%">Husky A200</td>
-      <td><img src="../images/Husky_dipan.jpg" width="60%"/></td>
-	</tr>
-</table>
-</td>
-<td>
- <table>
- <thead>
-	<tr>
-      <th>Sensor</th>
-      <th>type</th> 
-      <th>Rate</th>
-      <th>Pics</th>
-	</tr >
-  </thead>
-	<tr>
-      <td width="25%">INS/IMU</td>
-      <td width="30%">Xsens MTi-G-710</td>
-      <td width="15%">400 Hz</td>
-      <td><img src="../images/xsens.jpg" width="30%"/></td>
-	</tr>
-      <tr >
-      <td width="25%">Horizontal Lidar</td>
-      <td width="30%">Velodyne HDL-32E</td>
-      <td width="10%">10 Hz</td>
-      <td><img src="../images/Velodyne_32e.png" width="30%"/></td>
-	</tr>
-	<tr>
-	    <td width="25%">Vertical Lidar</td>
-      <td width="30%">Velodyne VLP-32C</td>
-      <td width="10%">10 Hz</td>
-      <td><img src="../images/Velodyne_Ultrapuck.png" width="30%"/></td>
-	</tr>
-	<tr>
-	    <td width="25%">MEMS Lidar</td>
-      <td width="30%">LiVOX Avia</td>
-      <td width="10%">10 Hz</td>
-      <td><img src="../images/LiVOX_Avia.jpg" width="30%"/></td>
-	</tr>
-	<tr>
-	    <td width="25%">Stereo Camera front</td>
-      <td width="30%">PointGrey BBX3-13S2C-38</td>
-      <td width="10%">10 Hz</td>
-      <td><img src="../images/bumblebee_xb3.jpg" width="40%"/></td>
-	</tr>
-      <tr>
-	    <td width="25%">Stereo Camera back</td>
-      <td width="30%">PointGrey BBX2-08S2C-38</td>
-      <td width="10%">10 Hz</td>
-      <td><img src="../images/bumblebee_xb2.jpg" width="30%"/></td>
-	</tr>
-	<tr>
-	     <td width="25%">Mono Camera 1<br>(with VLP-32C)</td>
-      <td width="30%">PointGrey CLMN-13S2C-CS</td>
-      <td width="10%">10 Hz</td>
-      <td><img src="../images/CMLN-13S2C-CS.jpg" width="30%"/></td>
-	</tr>
-	<tr>
-	     <td width="25%">Mono Camera 2<br>(with HDL-32E)</td>
-      <td width="30%">Hikvision MV-CB016-10GC-C</td>
-      <td width="10%">20 Hz</td>
-      <td><img src="../images/Hikvision_MV-CB016-10GC-C.png" width="40%"/></td>
-	</tr>
-      <tr>
-      <td width="25%">Mono Camera 3<br>(with LiVOX Avia)</td>
-      <td width="30%">Hikvision MV-CE060-10UC</td>
-      <td width="10%">20 Hz</td>
-      <td><img src="../images/Hikvision MV-CE060-10UC.png" width="30%"/></td>
-	</tr>
-</table>
-</td>
+<p align="center">
+    <td><img src="../images/system_which_one.png" width="80%"/></td>
+</p>
+
+
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow">No.</th>
+    <th class="tg-c3ow" width="15%">Sensor</th>
+    <th class="tg-c3ow">Manufacturer<br>&amp; Product name</th>
+    <th class="tg-c3ow">ROS topic name</th>
+    <th class="tg-c3ow">Message Type</th>
+    <th class="tg-c3ow" width="10%">Nominal Rate</th>
+    <th class="tg-c3ow">Pics</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow" rowspan="1">1</td>
+    <td class="tg-c3ow" rowspan="1">IMU/INS</td>
+    <td class="tg-c3ow" rowspan="1">Xsens MTi-G-710</td>
+    <td class="tg-0pky">/imu/data</td>
+    <td class="tg-0pky">sensor_msgs/Imu</td>
+    <td class="tg-c3ow">400 Hz</td>
+    <td><img src="../images/xsens.jpg" width="40%"/></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="1">2</td>
+    <td class="tg-c3ow" rowspan="1">Horizontal Lidar 1<br>(Mechanical LiDAR)</td>
+    <td class="tg-c3ow" rowspan="1">Velodyne HDL32E</td>
+    <td class="tg-0pky">/velodyne_points_HDL32</td>
+    <td class="tg-0pky">sensor_msgs/PointCloud2</td>
+    <td class="tg-c3ow">5 Hz(rotate at 10Hz)</td>
+    <td><img src="../images/Velodyne_32e.png" width="40%"/></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="2">3</td>
+    <td class="tg-c3ow" rowspan="2">Horizontal Lidar 2<br>(Digital LiDAR)</td>
+    <td class="tg-c3ow" rowspan="2">Ouster OS0-128</td>
+    <td class="tg-0pky">/os0_cloud_node/imu</td>
+    <td class="tg-0pky">sensor_msgs/Imu</td>
+    <td class="tg-c3ow">100 Hz</td>
+    <td><img src="../images/OS0-128.png" width="40%"/></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">/os0_cloud_node/points</td>
+    <td class="tg-0pky">sensor_msgs/PointCloud2</td>
+    <td class="tg-c3ow">10 Hz</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="2">4</td>
+    <td class="tg-c3ow" rowspan="2">Horizontal Lidar 3<br>(MEMS LiDAR)</td>
+    <td class="tg-c3ow" rowspan="2">LiVOX Avia</td>
+    <td class="tg-0pky">/livox/lidar</td>
+    <td class="tg-0pky">livox_ros_driver/CustomMsg</td>
+    <td class="tg-c3ow">10 Hz</td>
+    <td><img src="../images/LiVOX_Avia.jpg" width="40%"/></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">/livox/imu</td>
+    <td class="tg-0pky">sensor_msgs/Imu</td>
+    <td class="tg-c3ow">200 Hz</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="1">5</td>
+    <td class="tg-c3ow" rowspan="1">Vertical Lidar 1<br>(Mechanical LiDAR)</td>
+    <td class="tg-c3ow" rowspan="1">Velodyne VLP32C</td>
+    <td class="tg-0pky">/velodyne_points_VLP32</td>
+    <td class="tg-0pky">sensor_msgs/PointCloud2</td>
+    <td class="tg-c3ow">10Hz</td>
+    <td><img src="../images/Velodyne_Ultrapuck.png" width="40%"/></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="3">6</td>
+    <td class="tg-c3ow" rowspan="3">Stereo Camera front</td>
+    <td class="tg-c3ow" rowspan="3">PointGrey Bumblebee xb3</td>
+    <td class="tg-0pky">/camera/left/image_raw</td>
+    <td class="tg-0pky">sensor_msgs/Image</td>
+    <td class="tg-c3ow">10 Hz</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">/camera/center/image_raw</td>
+    <td class="tg-0pky">sensor_msgs/Image</td>
+    <td class="tg-c3ow">10 Hz</td>
+    <td><img src="../images/bumblebee_xb3.jpg" width="50%"/></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">/camera/right/image_raw</td>
+    <td class="tg-0pky">sensor_msgs/Image</td>
+    <td class="tg-c3ow">10 Hz</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="2">7</td>
+    <td class="tg-c3ow" rowspan="2">Stereo Camera back</td>
+    <td class="tg-c3ow" rowspan="2">PointGrey Bumblebee xb2</td>
+    <td class="tg-0pky">/cam_xb2/left/image_raw</td>
+    <td class="tg-0pky">sensor_msgs/Image</td>
+    <td class="tg-c3ow">10-15 Hz</td>
+    <td><img src="../images/bumblebee_xb2.jpg" width="40%"/></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">/cam_xb2/right/image_raw</td>
+    <td class="tg-0pky">sensor_msgs/Image</td>
+    <td class="tg-c3ow">10-15 Hz</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="1">8</td>
+    <td class="tg-c3ow" rowspan="1">Mono Camera 1<br>(With HDL32E)</td>
+    <td class="tg-c3ow" rowspan="1">Hikvision MV-CB016-10GC-C</td>
+    <td class="tg-0pky">/hik_camera/iamge_raw</td>
+    <td class="tg-0pky">sensor_msgs/Image</td>
+    <td class="tg-c3ow">20Hz</td>
+    <td><img src="../images/Hikvision_MV-CB016-10GC-C.png" width="30%"/></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" rowspan="1">9</td>
+    <td class="tg-c3ow" rowspan="1">Mono Camera 2<br>(With LiVOX Avia)</td>
+    <td class="tg-c3ow" rowspan="1">Hikvision MV-CE060-10UC</td>
+    <td class="tg-0pky">/hik_camera/iamge_raw</td>
+    <td class="tg-0pky">sensor_msgs/Image</td>
+    <td class="tg-c3ow">20Hz</td>
+    <td><img src="../images/Hikvision MV-CE060-10UC.png" width="20%"/></td>
+  </tr>
+</tbody>
 </table>
 
 ## IMU

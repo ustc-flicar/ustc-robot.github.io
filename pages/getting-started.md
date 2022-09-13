@@ -5,13 +5,13 @@ header:
    image_fullwidth  : "header_homepage_13.jpg"
 permalink           : "/getting-started/"
 ---
+
 ## Overview
 
 The acquisition system is illustrated in [Fig. 1](#fig-acsystme_1). It consists with three parts: Bucket Truck, Multisensors Platform and Ground Truth System.The bucket truck uses a hydraulic arm to lift the multi-sensor data acquisition system into the air. Well-calibrated and well-synchronized sensors such as cameras, Lidars, and IMUs collect multimodal data of the environment and motion information of the end of hydraulic arm. The laser tracker on the ground tracks the target prism on the motion platform, which provides millimeter-accurate 3D motion trajectories to provide benchmarks for positioning tasks.
 
 <p align="center">
     <img src="../images/acquisition_page1.jpg" alt="Hardware Setup" width="70%"/>
-    <img src="../images/acqusition_system_all.jpg" alt="Hardware Setup" width="70%"/>
 </p>
 <p style="text-align: center;">Fig 1. "Giraffe" Acquisition System </p>
 
@@ -52,7 +52,6 @@ The hydraulic arm of our bucket truck is produced by <a href="https://versalift.
 	<tr>
       <td rowspan="5"><img src="../images/platform.png" /></td>
 	</tr>
-
 </table>
 </td>
 <td>
@@ -80,7 +79,7 @@ The hydraulic arm of our bucket truck is produced by <a href="https://versalift.
       <tr >
       <td width="25%">Horizontal Lidar 2</td>
       <td width="30%">Ouster OS0-128</td>
-      <td width="10%">20 Hz</td>
+      <td width="10%">10 Hz</td>
       <td><img src="../images/OS0-128.png" width="30%"/></td>
 	</tr>
 	<tr>
@@ -98,30 +97,34 @@ The hydraulic arm of our bucket truck is produced by <a href="https://versalift.
 	<tr>
 	    <td width="25%">Stereo Camera front</td>
       <td width="30%">PointGrey Bumblebee xb3</td>
-      <td width="10%">16 Hz</td>
+      <td width="10%">10 Hz</td>
       <td><img src="../images/bumblebee_xb3.jpg" width="40%"/></td>
 	</tr>
   <tr>
 	    <td width="25%">Stereo Camera back</td>
       <td width="30%">PointGrey Bumblebee xb2</td>
-      <td width="10%">20 Hz</td>
+      <td width="10%">10-15 Hz</td>
       <td><img src="../images/bumblebee_xb2.jpg" width="30%"/></td>
 	</tr>
 	<tr>
 	     <td width="25%">Mono Camera 1<br>(with HDL-32E)</td>
       <td width="30%">PointGrey CLMN-13S2C-CS</td>
-      <td width="10%">18 Hz</td>
-      <td><img src="../images/CMLN-13S2C-CS.jpg" width="30%"/></td>
+      <td width="10%">20 Hz</td>
+      <td><img src="../images/Hikvision_MV-CB016-10GC-C.png" width="40%"/></td>
 	</tr>
 	<tr>
 	     <td width="25%">Mono Camera 2<br>(with LiVOX Avia)</td>
       <td width="30%">Hikvision MV-CE060-10UC</td>
-      <td width="10%">40 Hz</td>
+      <td width="10%">20 Hz</td>
       <td><img src="../images/Hikvision MV-CE060-10UC.png" width="30%"/></td>
 	</tr>
 </table>
 </td>
 </table>
+
+<p align="center">
+    <img src="../images/system_size.png" alt="Hardware Setup" />
+</p>
 
 <p align="center">
     <img src="../images/sersor_shiyitu.jpg" alt="Hardware Setup" />
@@ -138,3 +141,5 @@ The hydraulic arm of our bucket truck is produced by <a href="https://versalift.
 
 ## Ground Truth
 We use the Laser Tracker API T3 to get the ground truth of our dataset. The target ball 
+
+<img src="../images/acqusition_system_all.jpg" alt="Hardware Setup" width="70%"/>

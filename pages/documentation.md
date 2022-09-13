@@ -19,7 +19,7 @@ header: no
 
 
 <div class="medium-8 medium-pull-4 columns" markdown="1">
-{% include _improve_content.html %}
+
 
 ## About the Dataset   {#edit-navigation}
 

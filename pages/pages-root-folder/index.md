@@ -28,7 +28,7 @@ widget2:
 widget3:
   title: "Sensors & Usage"
   url: '/design/index.html'
-  image: sensors_page1.jpg
+  image: sensors_page1.png
   text: ''
 #
 # Use the call for action to show a button on the frontpage
@@ -48,7 +48,7 @@ widget3:
 homepage: true
 ---
 
-# Welcome to the USTC FlyingCar Dataset!
+# Welcome to USTC FlyingCar Dataset!
 ##### We take advantage of our autonomous acquisition system "Giraffe" to develop novel challenging real-world computer vision benchmarks. Our tasks of interest are: stereo, optical flow, visual odometry, 3D object detection, 3D tracking and SLAM. For this purpose, we equipped a multisensors platform with two high-resolution color and grayscale video cameras. 
 
 ## Are We Ready for Aerial Work Robots?
